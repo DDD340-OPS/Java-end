@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜品浏览</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/student.css">
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/dish-list.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="dish-list.html"><img src="../images/logo.svg" alt="">校园食堂评价与推荐系统</a>
+        <nav class="nav">
+            <a href="dish-list.html">菜品浏览</a>
+            <a href="upload-dish.html">上传菜品</a>
+            <a href="my-upload.html">我的上传</a>
+            <a href="my-favorite.html">我的收藏</a>
+            <a href="../login.html">登录</a>
+            <button type="button" data-logout>退出</button>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="page-title">
+            <div>
+                <h1>菜品浏览</h1>
+                <p>已通过审核的校园菜品</p>
+            </div>
+            <a class="btn primary" href="upload-dish.html">上传菜品</a>
+        </section>
+
+        <section class="panel">
+            <form id="searchForm" class="form-grid">
+                <div class="field">
+                    <label for="keyword">菜品名称</label>
+                    <input id="keyword" name="keyword" placeholder="例如 番茄牛腩饭">
+                </div>
+                <div class="field">
+                    <label for="canteen">所属食堂</label>
+                    <select id="canteen" name="canteen">
+                        <option value="">全部食堂</option>
+                        <option value="养贤府">养贤府</option>
+                        <option value="家和堂">家和堂</option>
+                        <option value="民族餐厅">民族餐厅</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="tag">口味标签</label>
+                    <input id="tag" name="tag" placeholder="例如 麻辣">
+                </div>
+                <div class="field">
+                    <label for="order">排序</label>
+                    <select id="order" name="order">
+                        <option value="score">综合推荐</option>
+                        <option value="rating">评分最高</option>
+                        <option value="favorite">收藏最多</option>
+                        <option value="latest">最新通过</option>
+                        <option value="priceAsc">价格从低到高</option>
+                        <option value="priceDesc">价格从高到低</option>
+                    </select>
+                </div>
+                <div class="field full">
+                    <div class="actions">
+                        <button class="btn primary" type="submit">搜索</button>
+                        <button class="btn" type="reset">重置</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="page-title">
+            <h1>推荐菜品</h1>
+        </section>
+        <section id="recommendGrid" class="grid"></section>
+
+        <section class="page-title" style="margin-top:28px;">
+            <h1>全部菜品</h1>
+        </section>
+        <section id="dishGrid" class="grid"></section>
+    </main>
+</body>
+</html>

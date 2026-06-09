@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜品详情</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/student.css">
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/dish-detail.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="dish-list.html"><img src="../images/logo.svg" alt="">校园食堂评价与推荐系统</a>
+        <nav class="nav">
+            <a href="dish-list.html">菜品浏览</a>
+            <a href="upload-dish.html">上传菜品</a>
+            <a href="my-upload.html">我的上传</a>
+            <a href="my-favorite.html">我的收藏</a>
+            <button type="button" data-logout>退出</button>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section id="dishDetail"></section>
+
+        <section class="panel">
+            <h2>发表评价</h2>
+            <form id="reviewForm" class="form-grid two">
+                <div class="field">
+                    <label for="rating">评分</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">5分</option>
+                        <option value="4">4分</option>
+                        <option value="3">3分</option>
+                        <option value="2">2分</option>
+                        <option value="1">1分</option>
+                    </select>
+                </div>
+                <div class="field full">
+                    <label for="content">评价内容</label>
+                    <textarea id="content" name="content" maxlength="500"></textarea>
+                </div>
+                <div class="field full">
+                    <button class="btn primary" type="submit">保存评价</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="page-title">
+            <h1>菜品评价</h1>
+        </section>
+        <section id="reviewList" class="review-list"></section>
+    </main>
+</body>
+</html>
